@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, type FormEvent } from "react";
@@ -148,10 +147,7 @@ const translations = {
   },
 };
 
-export default function Contact({
-  lang = "uz",
-  theme = "dark",
-}: ContactProps) {
+export default function Contact({ lang = "uz", theme = "dark" }: ContactProps) {
   const t = translations[lang] ?? translations.uz;
   const isLight = theme === "light";
 
@@ -227,7 +223,9 @@ export default function Contact({
           color: var(--text);
           font-family: var(--font-contact-body), sans-serif;
           scroll-margin-top: 90px;
-          transition: color 0.3s ease, background-color 0.3s ease;
+          transition:
+            color 0.3s ease,
+            background-color 0.3s ease;
         }
 
         .contact-light {
@@ -273,7 +271,7 @@ export default function Contact({
 
         .contact-top-grid {
           display: grid;
-          grid-template-columns: 1.1fr 0.9fr;
+          grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
           align-items: center;
           gap: 35px;
           margin-bottom: 58px;
@@ -331,7 +329,6 @@ export default function Contact({
           background: rgba(139, 92, 246, 0.07);
         }
 
-        /* Asosiy sarlavha: katta, ravon va zamonaviy */
         .contact-title {
           margin: 0;
           color: var(--text);
@@ -434,7 +431,8 @@ export default function Contact({
           }
         }
 
-        .contact-cloud-inner {
+        /* Icon cloud uchun responsive konteyner */
+        .contact-cloud-wrapper {
           display: flex;
           width: 100%;
           min-width: 0;
@@ -453,9 +451,18 @@ export default function Contact({
             var(--card);
         }
 
+        .contact-cloud-wrapper > * {
+          max-width: 100%;
+        }
+
+        .contact-cloud-wrapper > div {
+          width: 100%;
+          min-width: 0;
+        }
+
         .contact-grid {
           display: grid;
-          grid-template-columns: 0.85fr 1.15fr;
+          grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
           align-items: stretch;
           gap: 24px;
         }
@@ -752,7 +759,7 @@ export default function Contact({
 
         .contact-form-row {
           display: grid;
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
           gap: 15px;
         }
 
@@ -907,7 +914,7 @@ export default function Contact({
           }
 
           .contact-top-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: minmax(0, 1fr);
             gap: 25px;
             margin-bottom: 42px;
           }
@@ -936,12 +943,12 @@ export default function Contact({
             margin-inline: auto;
           }
 
-          .contact-cloud-inner {
+          .contact-cloud-wrapper {
             min-height: 280px;
           }
 
           .contact-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: minmax(0, 1fr);
             max-width: 680px;
             margin-inline: auto;
           }
@@ -953,7 +960,7 @@ export default function Contact({
           }
 
           .contact-top-grid {
-            gap: 12px;
+            gap: 20px;
             margin-bottom: 34px;
           }
 
@@ -974,8 +981,13 @@ export default function Contact({
             line-height: 1.85;
           }
 
-          .contact-cloud-inner {
-            display: none !important;
+          /* Telefon ekranida cloud yashirilmaydi */
+          .contact-cloud-wrapper {
+            display: flex;
+            width: 100%;
+            min-height: 230px;
+            margin-top: 4px;
+            border-radius: 20px;
           }
 
           .contact-card-content,
@@ -993,7 +1005,7 @@ export default function Contact({
           }
 
           .contact-form-row {
-            grid-template-columns: 1fr;
+            grid-template-columns: minmax(0, 1fr);
           }
 
           .contact-form-top {
@@ -1036,15 +1048,9 @@ export default function Contact({
         }
       `}</style>
 
-      <div
-        aria-hidden="true"
-        className="contact-bg-glow contact-bg-glow-one"
-      />
+      <div aria-hidden="true" className="contact-bg-glow contact-bg-glow-one" />
 
-      <div
-        aria-hidden="true"
-        className="contact-bg-glow contact-bg-glow-two"
-      />
+      <div aria-hidden="true" className="contact-bg-glow contact-bg-glow-two" />
 
       <div className="contact-container">
         <div className="contact-top-grid">
@@ -1078,7 +1084,9 @@ export default function Contact({
             </div>
           </div>
 
-          <IconCloudDemo />
+          <div className="contact-cloud-wrapper">
+            <IconCloudDemo />
+          </div>
         </div>
 
         <div className="contact-grid">
@@ -1140,10 +1148,7 @@ export default function Contact({
 
                     <span>{t.github}</span>
 
-                    <ArrowUpRight
-                      size={17}
-                      className="contact-social-arrow"
-                    />
+                    <ArrowUpRight size={17} className="contact-social-arrow" />
                   </a>
 
                   <a
@@ -1158,10 +1163,7 @@ export default function Contact({
 
                     <span>{t.telegram}</span>
 
-                    <ArrowUpRight
-                      size={17}
-                      className="contact-social-arrow"
-                    />
+                    <ArrowUpRight size={17} className="contact-social-arrow" />
                   </a>
                 </div>
               </div>
@@ -1190,9 +1192,7 @@ export default function Contact({
             <div className="contact-form-content">
               <div className="contact-form-top">
                 <div>
-                  <span className="contact-form-eyebrow">
-                    {t.formEyebrow}
-                  </span>
+                  <span className="contact-form-eyebrow">{t.formEyebrow}</span>
 
                   <h3>{t.formTitle}</h3>
                   <p>{t.formDescription}</p>
