@@ -5,7 +5,7 @@ import "./globals.css";
 import PageLoader from "@/components/PageLoader";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://portfolio-ten-two-o0ktysswsv.vercel.app"),
+  metadataBase: new URL("https://portfolio-me-eight-eta.vercel.app"),
 
   title: {
     default: "Portfolio",
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Muslimning portfolio sayti. React, Next.js va TypeScript bilan zamonaviy web interfeyslar yarataman.",
+    "Muslim Ikromov — Junior Frontend Developer. React, Next.js va TypeScript yordamida zamonaviy web interfeyslar yarataman.",
 
   icons: {
     icon: "/icon.svg",
@@ -22,15 +22,15 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Portfolio",
     description:
-      "Zamonaviy web interfeyslar, React va Next.js portfolio loyihalari.",
-    url: "https://portfolio-ten-two-o0ktysswsv.vercel.app/",
+      "React, Next.js va TypeScript loyihalari. Muslim Ikromovning portfolio sayti.",
+    url: "https://portfolio-me-eight-eta.vercel.app/",
     siteName: "Muslim Portfolio",
     images: [
       {
         url: "/portfolio.png",
         width: 1200,
         height: 630,
-        alt: "Muslim - Frontend Developer Portfolio",
+        alt: "Muslim — Frontend Developer Portfolio",
       },
     ],
     type: "website",
@@ -39,7 +39,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Portfolio",
-    description: "React va Next.js portfolio loyihalari.",
+    description:
+      "React va Next.js loyihalari — Muslim Ikromov portfolio sayti.",
     images: ["/portfolio.png"],
   },
 };
@@ -53,12 +54,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body>
         <Providers>
-          {/* Animatsiyali fon */}
           <div className="portfolio-background" aria-hidden="true">
             <div className="ambient-light" />
           </div>
 
-          {/* Sahifa kontenti */}
           <div className="relative z-10 min-h-screen">{children}</div>
         </Providers>
 
