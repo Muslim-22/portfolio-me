@@ -208,7 +208,6 @@ export default function Contact({ lang = "uz", theme = "dark" }: ContactProps) {
     >
       <style jsx>{`
         .contact-section {
-          --bg: #07070a;
           --text: #f5f5f7;
           --muted: #9898a8;
           --card: rgba(255, 255, 255, 0.035);
@@ -229,7 +228,6 @@ export default function Contact({ lang = "uz", theme = "dark" }: ContactProps) {
         }
 
         .contact-light {
-          --bg: #f7f8fc;
           --text: #171725;
           --muted: #656579;
           --card: rgba(255, 255, 255, 0.88);
@@ -271,7 +269,7 @@ export default function Contact({ lang = "uz", theme = "dark" }: ContactProps) {
 
         .contact-top-grid {
           display: grid;
-          grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+          grid-template-columns: 1.1fr 0.9fr;
           align-items: center;
           gap: 35px;
           margin-bottom: 58px;
@@ -393,7 +391,6 @@ export default function Contact({ lang = "uz", theme = "dark" }: ContactProps) {
           margin: 0;
           color: var(--muted);
           font-size: 14px;
-          font-weight: 400;
           line-height: 1.95;
           letter-spacing: -0.012em;
           text-wrap: pretty;
@@ -412,7 +409,6 @@ export default function Contact({ lang = "uz", theme = "dark" }: ContactProps) {
           background: rgba(34, 197, 94, 0.07);
           font-size: 12px;
           font-weight: 550;
-          letter-spacing: -0.01em;
         }
 
         .contact-status-dot {
@@ -431,7 +427,7 @@ export default function Contact({ lang = "uz", theme = "dark" }: ContactProps) {
           }
         }
 
-        /* Icon cloud uchun responsive konteyner */
+        /* IconCloudDemo konteyneri */
         .contact-cloud-wrapper {
           display: flex;
           width: 100%;
@@ -452,17 +448,14 @@ export default function Contact({ lang = "uz", theme = "dark" }: ContactProps) {
         }
 
         .contact-cloud-wrapper > * {
-          max-width: 100%;
-        }
-
-        .contact-cloud-wrapper > div {
           width: 100%;
+          max-width: 100%;
           min-width: 0;
         }
 
         .contact-grid {
           display: grid;
-          grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+          grid-template-columns: 0.85fr 1.15fr;
           align-items: stretch;
           gap: 24px;
         }
@@ -557,7 +550,6 @@ export default function Contact({ lang = "uz", theme = "dark" }: ContactProps) {
           color: var(--muted);
           font-size: 12px;
           line-height: 1.75;
-          letter-spacing: -0.01em;
         }
 
         .contact-info-item {
@@ -599,8 +591,6 @@ export default function Contact({ lang = "uz", theme = "dark" }: ContactProps) {
         .contact-info-text > span {
           color: var(--muted);
           font-size: 11px;
-          font-weight: 450;
-          letter-spacing: 0.01em;
         }
 
         .contact-info-text > strong {
@@ -609,7 +599,6 @@ export default function Contact({ lang = "uz", theme = "dark" }: ContactProps) {
           font-size: 13px;
           font-weight: 600;
           line-height: 1.6;
-          letter-spacing: -0.015em;
         }
 
         .contact-info-arrow,
@@ -644,7 +633,6 @@ export default function Contact({ lang = "uz", theme = "dark" }: ContactProps) {
           color: var(--muted);
           font-size: 11px;
           font-weight: 550;
-          letter-spacing: 0.01em;
         }
 
         .contact-social-link {
@@ -656,7 +644,6 @@ export default function Contact({ lang = "uz", theme = "dark" }: ContactProps) {
           color: var(--text);
           font-size: 13px;
           font-weight: 550;
-          letter-spacing: -0.015em;
           text-decoration: none;
         }
 
@@ -696,7 +683,6 @@ export default function Contact({ lang = "uz", theme = "dark" }: ContactProps) {
           font-size: 12px;
           font-weight: 650;
           line-height: 1.5;
-          letter-spacing: -0.015em;
         }
 
         .contact-bottom-note p {
@@ -745,9 +731,7 @@ export default function Contact({ lang = "uz", theme = "dark" }: ContactProps) {
           margin: 0;
           color: var(--muted);
           font-size: 12px;
-          font-weight: 400;
           line-height: 1.85;
-          letter-spacing: -0.01em;
           text-wrap: pretty;
         }
 
@@ -759,7 +743,7 @@ export default function Contact({ lang = "uz", theme = "dark" }: ContactProps) {
 
         .contact-form-row {
           display: grid;
-          grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+          grid-template-columns: 1fr 1fr;
           gap: 15px;
         }
 
@@ -774,7 +758,6 @@ export default function Contact({ lang = "uz", theme = "dark" }: ContactProps) {
           color: var(--text);
           font-size: 12px;
           font-weight: 600;
-          letter-spacing: -0.01em;
         }
 
         .contact-field input,
@@ -790,8 +773,6 @@ export default function Contact({ lang = "uz", theme = "dark" }: ContactProps) {
           background: var(--input);
           font-family: var(--font-contact-body), sans-serif;
           font-size: 12px;
-          font-weight: 450;
-          letter-spacing: -0.01em;
           transition:
             border-color 0.25s ease,
             box-shadow 0.25s ease,
@@ -844,7 +825,6 @@ export default function Contact({ lang = "uz", theme = "dark" }: ContactProps) {
           font-family: var(--font-contact-body), sans-serif;
           font-size: 13px;
           font-weight: 650;
-          letter-spacing: -0.015em;
           cursor: pointer;
           transition:
             transform 0.25s ease,
@@ -914,7 +894,7 @@ export default function Contact({ lang = "uz", theme = "dark" }: ContactProps) {
           }
 
           .contact-top-grid {
-            grid-template-columns: minmax(0, 1fr);
+            grid-template-columns: 1fr;
             gap: 25px;
             margin-bottom: 42px;
           }
@@ -948,7 +928,7 @@ export default function Contact({ lang = "uz", theme = "dark" }: ContactProps) {
           }
 
           .contact-grid {
-            grid-template-columns: minmax(0, 1fr);
+            grid-template-columns: 1fr;
             max-width: 680px;
             margin-inline: auto;
           }
@@ -960,6 +940,7 @@ export default function Contact({ lang = "uz", theme = "dark" }: ContactProps) {
           }
 
           .contact-top-grid {
+            grid-template-columns: minmax(0, 1fr);
             gap: 20px;
             margin-bottom: 34px;
           }
@@ -981,13 +962,9 @@ export default function Contact({ lang = "uz", theme = "dark" }: ContactProps) {
             line-height: 1.85;
           }
 
-          /* Telefon ekranida cloud yashirilmaydi */
+          /* Telefon ekranida IconCloudDemo butunlay yashiriladi */
           .contact-cloud-wrapper {
-            display: flex;
-            width: 100%;
-            min-height: 230px;
-            margin-top: 4px;
-            border-radius: 20px;
+            display: none !important;
           }
 
           .contact-card-content,
@@ -1005,7 +982,7 @@ export default function Contact({ lang = "uz", theme = "dark" }: ContactProps) {
           }
 
           .contact-form-row {
-            grid-template-columns: minmax(0, 1fr);
+            grid-template-columns: 1fr;
           }
 
           .contact-form-top {
